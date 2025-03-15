@@ -247,7 +247,7 @@ const createCompactLangNode = ({ lang, totalSize, hideProgress, index }) => {
 
   return `
     <g class="stagger" style="animation-delay: ${staggerDelay}ms">
-      <circle cx="5" cy="6" r="5" fill="${color}" />
+      <rect x="5" y="3" width="7" height="7" fill="${color}" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
         ${lang.name} ${hideProgress ? "" : percentage + "%"}
       </text>
@@ -387,7 +387,7 @@ const renderCompactLayout = (langs, width, totalLanguageSize, hideProgress) => {
       ? ""
       : `
       <mask id="rect-mask">
-          <rect x="0" y="0" width="${offsetWidth}" height="8" fill="white" rx="5"/>
+          <rect x="0" y="0" width="${offsetWidth}" height="8" fill="white"/>
         </mask>
         ${compactProgressBar}
       `
