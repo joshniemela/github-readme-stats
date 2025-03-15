@@ -18,7 +18,13 @@ axios
 
     //Filter only language colors from the whole file
     Object.keys(languages).forEach((lang) => {
-      languageColors[lang] = languages[lang].color;
+      const language = languages[lang];
+      const extensions = language.extensions;
+      if (!extensions) return;
+      extensions.forEach((extension) => {
+        // remove the leading dot
+        languageColors[extension.slice(1)] = language.color;
+      });
     });
 
     //Debug Print
